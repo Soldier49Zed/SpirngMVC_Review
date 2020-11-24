@@ -26,9 +26,9 @@
         <property name="suffix" value=".jsp"/>
         <!--如果有配置数据库事务，需要开启注解事务的，需要开启这段代码-->
 
-        <!--
-            <tx:annotation-driven transaction-manager="transactionManager"/>
-        -->
+
+        <tx:annotation-driven transaction-manager="transactionManager"/>
+
 
     </bean>
 
