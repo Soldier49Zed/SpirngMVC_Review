@@ -33,15 +33,15 @@ public class RoleController {
         return mv;
     }
 
-    // // 获取角色
-    // @RequestMapping(value = "/getRole2", method = RequestMethod.GET)
-    // public ModelAndView getRole2(@RequestParam("id") Long id) {
-    //     Role role = roleService.getRole(id);
-    //     ModelAndView mv = new ModelAndView();
-    //     mv.addObject("role", role);
-    //     // 指定视图类型
-    //     mv.setView(new MappingJackson2JsonView());
-    //     return mv;
-    // }
+    // 获取角色
+    @RequestMapping(value = "/getRole2", method = RequestMethod.GET)
+    public ModelAndView getRole2(@RequestParam("id") Long id) {
+        Role role = roleService.getRole(id);
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("role", role);
+        // 指定视图类型
+        mv.setView(new MappingJackson2JsonView());
+        return mv;
+    }
 
 }
