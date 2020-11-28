@@ -1,12 +1,106 @@
-<%@page contentType="text/html; ISO-8859-1" pageEncoding="UTF-8" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
-    </head>
-    <body>
-        <h1>Hello,Spring MVC</h1>
-    </body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>参数</title>
+    <!-- 加载Query文件-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+//----------------------------------------------------------------------
+//             var data = {
+//                 //角色查询参数
+//                 roleName: 'role_name_1',
+//                 note: 'note_1',
+//                 //分页参数
+//                 pageParams: {
+//                     start: 0,
+//                     limit: 20
+//                 }
+//             }
+//
+//             //Jquery的post请求
+//             $.post({
+//                 url: ".params/findRoles.do",
+//                 //此处需要告知传递参数类型为json,不能缺少
+//                 contentType: "application/json",
+//                 //将json转化为字符串传递
+//                 data: JSON.stringify(data),
+//                 //成功后的方法
+//                 success:function (result) {
+//
+//                 }
+//             });
+//----------------------------------------------------------------------
+//             //删除角色数组
+//             var idList = [1,2,3];
+//             //jQuery的post请求
+//             $.post({
+//                 url:"./params/deleteRoles.do",
+//                 //将json转化为字符串传递
+//                 data:JSON.stringify(idList),
+//                 //指定传递数据类型，不可缺少
+//                 contentType:"application/json",
+//                 success:function (result) {
+//
+//                 }
+//             });
+//----------------------------------------------------------------------
+//             //新增角色数组
+//             var roleList = [
+//                 {roleName: 'role_name_1', note: 'note_1'},
+//                 {roleName: 'role_name_2', note: 'note_2'},
+//                 {roleName: 'role_name_3', note: 'note_3'}
+//             ];
+//             //jQuery的post请求
+//             $.post({
+//                 url:"./params/addRoles.do",
+//                 //将json转化为字符串传递
+//                 data: JSON.stringify(roleList),
+//                 contentType: "application/json",
+//                 success: function (result) {
+//
+//                 }
+//             });
+//----------------------------------------------------------------------
+            $("#commit").click(function () {
+                var str = $("form").serialize();
+                //提交表单
+                $.post({
+                    url: "./params/commonParamPojo.do",
+                    // url: "./params/commonParamPojo2.do",
+                    //将form数据序列化，传递给后台，则将数据以roleName=xxx&&note=xxx传递
+                    data: $("form").serialize(),
+                    //成功后的方法
+                    success: function (result) {
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+<form id="form">
+    <table>
+        <tr>
+            <td>角色名称</td>
+            <td><input id="roleName" name="roleName" value=""/></td>
+        </tr>
+        <tr>
+            <td>备注</td>
+            <td><input id="note" name="note"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="right"><input id="commit" type="button" value="提交"/></td>
+        </tr>
+    </table>
+</form>
+</body>
 </html>

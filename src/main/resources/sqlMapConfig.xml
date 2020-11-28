@@ -13,7 +13,7 @@
 
     <!--映射配置-->
     <mappers>
-        <mapper resource="com/houx/mapper/RoleMapper.xml"/>
+        <mapper resource="com/houx/mvc1126/mapper/RoleMapper.xml"/>
 
         <!--<package name=""></package>-->
     </mappers>

@@ -1,21 +1,23 @@
-package com.houx.pojo;
+package com.houx.mvc1126.pojo;
 
 /**
  * @Author: HouX
- * @Date: 2020/11/24
+ * @Date: 2020/11/26
  * @Description:
  */
-public class Role {
-    private Long id;
+public class RoleParams {
+
     private String roleName;
     private String note;
 
-    public Long getId() {
-        return id;
+    private PageParams pageParams = null;
+
+    public PageParams getPageParams() {
+        return pageParams;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPageParams(PageParams pageParams) {
+        this.pageParams = pageParams;
     }
 
     public String getRoleName() {
@@ -33,5 +35,4 @@ public class Role {
     public void setNote(String note) {
         this.note = note;
     }
-
 }

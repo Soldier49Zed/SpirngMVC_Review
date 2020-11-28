@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>out标签的使用</title>
+	<title>out标签的使用</title>
 </head>
 <body>
 </body>

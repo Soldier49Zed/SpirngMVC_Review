@@ -1,8 +1,8 @@
-package com.houx.dao;
+package com.houx.basic.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.houx.pojo.Role;
+import com.houx.basic.pojo.Role;
 
 /**
  * @Author: HouX
@@ -10,8 +10,8 @@ import com.houx.pojo.Role;
  * @Description:
  */
 
-@Repository
+//@Repository
 public interface RoleDao {
-	
+
 	public Role getRole(Long id);
 }

@@ -1,6 +1,6 @@
-package com.houx.service;
+package com.houx.basic.service;
 
-import com.houx.pojo.Role;
+import com.houx.basic.pojo.Role;
 
 /**
  * @Author: HouX
@@ -9,6 +9,7 @@ import com.houx.pojo.Role;
  */
 
 public interface RoleService {
-	
+
 	public Role getRole(Long id);
 }
+

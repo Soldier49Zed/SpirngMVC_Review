@@ -1,7 +1,7 @@
-package com.houx.controller;
+package com.houx.basic.controller;
 
-import com.houx.pojo.Role;
-import com.houx.service.RoleService;
+import com.houx.basic.pojo.Role;
+import com.houx.basic.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
  * @Description:
  */
 
-@Controller
+//@Controller
 @RequestMapping("/role")
 public class RoleController {
     // 注入角色服务类
@@ -24,7 +24,7 @@ public class RoleController {
     private RoleService roleService = null;
 
     @RequestMapping(value = "/getRole", method = RequestMethod.GET)
-    public ModelAndView getRole(@RequestParam(value = "id", defaultValue = "1") Long id) {
+    public ModelAndView getRole(@RequestParam(value = "id" ,defaultValue = "1") Long id) {
         Role role = roleService.getRole(id);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("roleDetails");
@@ -35,7 +35,7 @@ public class RoleController {
 
     // 获取角色
     @RequestMapping(value = "/getRole2", method = RequestMethod.GET)
-    public ModelAndView getRole2(@RequestParam("id") Long id) {
+    public ModelAndView getRole2(@RequestParam(value = "id",defaultValue = "1") Long id) {
         Role role = roleService.getRole(id);
         ModelAndView mv = new ModelAndView();
         mv.addObject("role", role);
@@ -43,5 +43,4 @@ public class RoleController {
         mv.setView(new MappingJackson2JsonView());
         return mv;
     }
-
 }
